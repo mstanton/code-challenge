@@ -6,7 +6,7 @@
 
 // https://en.wikipedia.org/wiki/Clock_angle_problem :) 
 
-
+// Sorry for the lack of commenting :()
 
 import React, { Component } from 'react';
 
@@ -25,21 +25,14 @@ export default class App extends Component {
         this.handleInput = this.handleInput.bind( this );
     }
 
-    shouldComponentUpdate( nextProps, nextState ) {
-        console.log( 'WEEEEEE..', nextProps, nextState );
-        
-        return true
-    }
-
     calculateDegrees( timeString ) { 
         const hours = parseFloat( timeString.slice( 0, 2 ), 10) % 12;
         const mins = parseFloat( timeString.slice( 3, 5 ), 10);
 
-        // Calculate Sums 
+        // Calculate Angle Sums 
         const hourDegrees = 0.5 * ( 60 * hours + mins );
         const minDegrees = 6.0 * mins;
         const totalDegrees =  minDegrees > hourDegrees ? minDegrees - hourDegrees : hourDegrees - minDegrees;
-
 
         this.setState({
             timeString: timeString,
@@ -55,8 +48,6 @@ export default class App extends Component {
     }
 
     render() {
-        console.log( 'STATE', this.state );
-        // console.log( 'PROPS', this.calculateDegrees(timeString) )
         return (
             <div>
                 <div className="container" style={ { marginTop: '100px' } }>
@@ -99,13 +90,13 @@ export default class App extends Component {
                                     </tr>
                                     <tr>
                                         <td>
-                                            { this.state.minDegrees ? this.state.minDegrees : 0 }&deg;
+                                            <span>{ this.state.minDegrees ? this.state.minDegrees : 0 }&deg;</span>
                                         </td>
                                         <td>Minute Hand</td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            { this.state.totalDegrees ? this.state.totalDegrees : 0 }&deg;
+                                            <span>{ this.state.totalDegrees ? this.state.totalDegrees : 0 }&deg;</span>
                                         </td>
                                         <td>Total between clock hands</td>
                                     </tr>
