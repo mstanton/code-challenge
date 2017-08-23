@@ -1,7 +1,7 @@
 ### How do I run this?
-
-- In the terminal run a yarn install or npm depending on preference.
-- Upon completion of install run 'yarn start' or 'npm start'
+- Run 'yarn' loads app /node_module dependencies
+- Run 'yarn build' creates /dist containing built app files
+- Run 'yarn start' loads webpack-dev-server environment
 
 - View running application at http://localhost:8080
 

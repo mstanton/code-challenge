@@ -29,7 +29,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css?sourceMap!sass?sourceMap',
+                loader: 'sass',
                 include: APP_DIR + '/scss/',
 				exclude: /(node_modules)/
             }

@@ -5,7 +5,8 @@
   "author": "Matthew Stanton <mrstanton81@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack --progress && webpack-dev-server --progress --colors"
+    "build": "webpack --progress",
+    "start": "webpack-dev-server --progress --colors"
   },
   
   "devDependencies": {
