@@ -74,12 +74,12 @@ export default class App extends Component {
                                     </form>
                             
                         </div>
-                        <div className="col-xs-5" style={ { paddingTop: '56px', paddingLeft: '40px' } }>
+                        <div className="col-xs-7" style={ { paddingTop: '56px' } }>
                         <table className="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
                                         <th>Units: deg.&deg;</th>
-                                        <th>Measurement</th>
+                                        <th>Angle</th>
                                     </tr>
                                 </thead>      
                                 <tbody>
