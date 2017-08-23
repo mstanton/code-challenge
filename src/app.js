@@ -9,6 +9,7 @@
 // Sorry for the lack of commenting :()
 
 import React, { Component } from 'react';
+// import './scss/main.scss';
 
 export default class App extends Component {
     constructor( props ) {
@@ -73,7 +74,7 @@ export default class App extends Component {
                                     </form>
                             
                         </div>
-                        <div className="col-xs-5" style={ { paddingTop: '56px' } }>
+                        <div className="col-xs-5" style={ { paddingTop: '56px', paddingLeft: '40px' } }>
                         <table className="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
