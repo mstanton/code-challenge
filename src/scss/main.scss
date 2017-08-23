@@ -1,41 +1,49 @@
 
 .app-container {
-    margin-top: 48px;
-
+    margin-top: 42px;
+    font-family: Courier New, Courier, monospace;
     // header elements
     .app-header {
         padding-bottom:42px;
      
-
-        
-        .ref-link {
-            position: relative;
-            right: 0px;
-            bottom: 0px;
-            font-size: 12px;
-            font-style: italic;
-
-            a {
-                color: #990000;
-            }
+        h1 {
+            font-weight:bold;
         }
     }
     
     // form styles
    .form-time {
-        margin:0px;
+        margin:0px 0px 0px 24px;
         label {
+            margin-top:16px;
+            font-size: 24px;
             font-weight:bold;
+            padding-right:20px;
         }
 
         .time-input {
-            font-size:24px;
+            font-size:18px;
+            max-width: 158px;
         }
    }
    
    // angle table
     .table-angles-header {
        padding: 0px 0 0 42px;
+    }
+
+    .app-footer {
+        .ref-link {
+            float: right;
+            margin-top: 7px;
+            margin-right: 42px;
+            font-size: 11px;
+            font-style: italic;
+
+            a {
+                color: #990000;
+            }
+        }
     }
 }
 

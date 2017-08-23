@@ -56,57 +56,63 @@ export default class App extends Component {
                     <div className="row">
                         <div className="col-xs-12 app-header">
                             <h1>code-example: clock angle problem</h1> 
-                            <p className="ref-link">-ref: <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">https://en.wikipedia.org/wiki/Clock_angle_problem</a></p>
                         </div>
                     </div>    
-                    <div className="row">    
-                        <div className="col-xs-4">
-                            <form className="form-group form-time">
-                                <label>Please enter time</label>            
-                                
-                                { /* time input type is poorly supported... YOLO */ }
-                                <input id="time"
-                                    name="time" 
-                                    type="time" 
-                                    style={ {  } }
-                                    className="form-control input-lg time-input"
-                                    onChange={ this.handleInput }
-                                />
-
-                            </form>
-                        </div>
-                        <div className="col-xs-7 table-angles-header">
-                        <table className="table table-bordered table-condensed">
+                    <div className="row">  
+                        <div className="col-xs-6">
+                            <table className="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
-                                        <th>Units: deg.&deg;</th>
-                                        <th>Angle</th>
+                                        <th>units: deg.&deg;</th>
+                                        <th style={ { textAlign: 'center' } }>Angle</th>
                                     </tr>
                                 </thead>      
                                 <tbody>
-                                    <tr  className="text-right">
-                                        <td>
+                                    <tr>
+                                        <td>hour hand</td>
+                                        <td style={ { textAlign: 'center' } }>
                                             <span>{ this.state.hourDegrees ? this.state.hourDegrees : 0 }&deg;</span>
-                                        </td>
-                                        <td>Hour Hand</td>
+                                        </td>                                        
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td>minute hand</td>
+                                        <td style={ { textAlign: 'center' } }>
                                             <span>{ this.state.minDegrees ? this.state.minDegrees : 0 }&deg;</span>
                                         </td>
-                                        <td>Minute Hand</td>
                                     </tr>
                                     <tr>
-                                        <td>
+                                        <td>total between hands</td>
+                                        <td style={ { textAlign: 'center' } }>
                                             <span>{ this.state.totalDegrees ? this.state.totalDegrees : 0 }&deg;</span>
                                         </td>
-                                        <td>Total between clock hands</td>
                                     </tr>
                                 </tbody>    
                             </table>   
+                        </div>  
+                        <div className="col-xs-4">
+                            <form className="form-inline form-time">
+                                <label className="form-label">Time:</label>  
+                                <div className="form-group">  
+                                        { /* time input type is poorly supported... YOLO */ }
+                                        <input id="time"
+                                            name="time" 
+                                            type="time" 
+                                            className="form-control time-input"
+                                            onChange={ this.handleInput }
+                                        /> 
+                                </div>
+
+                            </form>
                         </div>
                     </div>
-                </div>
+                    <div className="row">
+                        <div className="col-xs-12 app-footer">
+                            <br/><br/><br/>
+                                <p>-ref: <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">https://en.wikipedia.org/wiki/Clock_angle_problem</a></p>
+                            
+                        </div>
+                   </div>  
+                </div>        
             </div>
         );
     }
