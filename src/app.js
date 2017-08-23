@@ -17,7 +17,7 @@ export default class App extends Component {
         super( props )
 
         this.state = {
-            timeString: '00:00',
+            timeString: null,
             hourDegrees: null, 
             minDegrees: null, 
             totalDegrees: null
@@ -28,8 +28,8 @@ export default class App extends Component {
     }
 
     calculateDegrees( timeString ) { 
-        const hours = parseFloat( timeString.slice( 0, 2 ), 10) % 12;
-        const mins = parseFloat( timeString.slice( 3, 5 ), 10);
+        const hours = parseFloat( timeString.slice( 0, 2 ), 10 ) % 12;
+        const mins = parseFloat( timeString.slice( 3, 5 ), 10 );
 
         // Calculate Angle Sums 
         const hourDegrees = 0.5 * ( 60 * hours + mins );
@@ -52,30 +52,31 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <div className="container" style={ { marginTop: '100px' } }>
+                <div className="container app-container">
                     <div className="row">
-                        <div className="col-xs-12">
-                            <h2>Code Challenge: Clock Angle Problem</h2>
-                            <blockquote style={{ margin: '14px 0px 7px 0px'}}>
-                                <p>"Clock angle problems are a type of mathematical problem which involve finding the
-                                angles between the hands of an analog clock."</p>
-                            </blockquote> 
-                            <span className="pull-right">- <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">https://en.wikipedia.org/wiki/Clock_angle_problem</a></span>
-   
+                        <div className="col-xs-10 app-header">
+                            <h1>Code Sample:</h1> 
+                            <h3>Clock Angle Problem</h3>
+                            <p className="ref-link">-ref: <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">https://en.wikipedia.org/wiki/Clock_angle_problem</a></p>
                         </div>
-                        <div className="col-xs-4" style={ { paddingTop: '72px' } }>
-                           
-                                    <form className="form-group">
-                                    <label>Please enter time</label>
-                                    
-                                    { /* time input type is poorly supported... YOLO */ }
-                                    <input name="time" id="time" type="time" style={{ maxWidth: '260px'}}
-                                        className="form-control input-lg"
-                                        onChange={ this.handleInput }/>
-                                    </form>
-                            
+                    </div>    
+                    <div className="row">    
+                        <div className="col-xs-4">
+                            <form className="form-group form-time">
+                                <label>Please enter time</label>            
+                                
+                                { /* time input type is poorly supported... YOLO */ }
+                                <input id="time"
+                                    name="time" 
+                                    type="time" 
+                                    style={ {  } }
+                                    className="form-control input-lg time-input"
+                                    onChange={ this.handleInput }
+                                />
+
+                            </form>
                         </div>
-                        <div className="col-xs-7" style={ { paddingTop: '56px' } }>
+                        <div className="col-xs-7 table-angles-header">
                         <table className="table table-bordered table-condensed">
                                 <thead>
                                     <tr>
