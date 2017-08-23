@@ -9,7 +9,8 @@
 // Sorry for the lack of commenting :()
 
 import React, { Component } from 'react';
-// import './scss/main.scss';
+
+import './scss/main.scss';
 
 export default class App extends Component {
     constructor( props ) {

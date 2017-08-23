@@ -1,9 +1,15 @@
 const webpack = require('webpack');
 const path = require('path');
+const NodeSassLoader = require('node-sass-loader');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BUILD_DIR = path.resolve(__dirname, 'dist/js/');
+const BUILD_DIR = path.resolve(__dirname, 'dist/');
 const APP_DIR = path.resolve(__dirname, 'src/');
+
+NodeSassLoader.compile({ 
+    source_directory: APP_DIR + '/scss',
+    destination_directory: BUILD_DIR + '/css',
+});
 
 module.exports = {
 	watch: true,
@@ -13,7 +19,7 @@ module.exports = {
 	entry: './index.js',
 	output: {
 		path: BUILD_DIR,
-		filename: 'bundle.js'
+		filename: './js/bundle.js'
 	},
 	resolve: {
 		extensions: [ '.js' ],
@@ -25,21 +31,18 @@ module.exports = {
                 test: /\.js|.jsx?$/,
                 loader: 'babel-loader',
                 include: APP_DIR,
-                exclude: /(node_modules)/
+                exclude: '/node_modules/'
             },
             {
                 test: /\.scss$/,
-                loader: 'sass',
+                loader: 'style-loader!css-loader!sass-loader',
                 include: APP_DIR + '/scss/',
-				exclude: /(node_modules)/
+				exclude: '/node_modules/'
             }
         ]
     },
 	plugins: [
 		new webpack.NoEmitOnErrorsPlugin(),
-		new ExtractTextPlugin({
-            filename: BUILD_DIR + "css/style.css",
-        }),
         new HtmlWebpackPlugin({
             cache: false,
             hash: true,
