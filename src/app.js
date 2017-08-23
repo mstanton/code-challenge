@@ -54,9 +54,8 @@ export default class App extends Component {
             <div>
                 <div className="container app-container">
                     <div className="row">
-                        <div className="col-xs-10 app-header">
-                            <h1>Code Sample:</h1> 
-                            <h3>Clock Angle Problem</h3>
+                        <div className="col-xs-12 app-header">
+                            <h1>code-example: clock angle problem</h1> 
                             <p className="ref-link">-ref: <a href="https://en.wikipedia.org/wiki/Clock_angle_problem">https://en.wikipedia.org/wiki/Clock_angle_problem</a></p>
                         </div>
                     </div>    
